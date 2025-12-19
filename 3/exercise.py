@@ -1,0 +1,116 @@
+#3-1. Names
+names = ['bao', 'hung', 'anh', 'tuan', 'linh']
+print(names)
+print(names[0])
+print(names[1])
+print(names[2])
+print(names[3])
+print(names[4])
+#3-2. Greetings
+message = f"Hello, nice to meet you, "
+print(f"{message} {names[0]}")
+print(f"{message} {names[1]}")
+print(f"{message} {names[2]}")
+print(f"{message} {names[3]}")
+print(f"{message} {names[4]}")
+#3-3. Your own list
+transportation = ['car', 'bike', 'bus', 'motorbike', 'airplane']
+print(f"I would like to own a {transportation[0]}")
+#3-4. Guest List
+invite = ['bao', 'hung', 'anh', 'tuan', 'linh', 'quoc', 'nam']
+print(f"Dear {invite[0].title()}, I would like to invite you to dinner.")
+print(f"Dear {invite[1].title()}, I would like to invite you to dinner")
+print(f"Dear {invite[2].title()}, I would like to invite you to dinner.")
+print(f"Dear {invite[3].title()}, I would like to invite you to dinner")
+print(f"Dear {invite[4].title()}, I would like to invite you to dinner.")
+
+#3-5. Changing Guest List
+print(f"Unfortunately, {invite[2].title()} can't make it to the dinner.")
+print(f"Unfortunately, {invite[3].title()} can't make it to the dinner.")
+del invite[2]
+del invite[3]
+invite.insert(2, 'quang')
+invite.insert(3, 'phuc')
+print(invite)
+print(f"Dear {invite[0].title()}, I would like to invite you to dinner.")
+print(f"Dear {invite[1].title()}, I would like to invite you to dinner")
+print(f"Dear {invite[2].title()}, I would like to invite you to dinner")
+print(f"Dear {invite[3].title()}, I would like to invite you to dinner")
+print(f"Dear {invite[4].title()}, I would like to invite you to dinner.")
+#3-6. More Guests
+print("Good news! I found a bigger dinner table.")
+invite.insert(0,'minh')
+invite.insert(3,'phong')
+invite.append('dung')
+print(invite)
+print(f"Dear {invite[0].title()}, I would like to invite you to dinenr.")
+print(f"Dead {invite[1].title()}, I would like to invite you to dinner.")
+print(f"Dear {invite[2].title()}, I would like to invite you to dinner")
+print(f"Dear {invite[3].title()}, I would like to invite you to dinner")
+print(f"Dear {invite[4].title()}, I would like to invite you to dinner")
+print(f"Dear {invite[5].title()}, I would like to invite you to dinner")
+print(f"Dear {invite[6].title()}, I would like to invite you to dinner")
+print(f"Dear {invite[7].title()}, I would like to invite you to dinner")
+#3-7. Shrinking Guest List
+print("Sorry, I can only invite two people for dinner.")
+removed_guest1 = invite.pop()
+print(f"Sorry {removed_guest1.title()}, I can't invite you to dinner.")
+removed_guest2 = invite.pop()
+print(f"Sorry {removed_guest2.title()}, I can't invite you to dinner.")
+removedd_guest3 = invite.pop()
+print(f"Sorry {removedd_guest3.title()}, I can't invite you to dinner.")
+removed_guest4 = invite.pop()
+print(f"Sorry {removed_guest4.title()}, I can't invite you to dinner.")
+removed_guest5 = invite.pop()
+print(f"Sorry {removed_guest5.title()}, I can't invite you to dinner.")
+removed_guest6 = invite.pop()
+print(f"Sorry {removed_guest6.title()}, I can't invite you to dinner.")
+removed_guest7 = invite.pop()
+print(f"Sorry {removed_guest7.title()}, I can't invite you to dinner.")
+removed_guest7 = invite.pop()
+print(f"Sorry {removed_guest7.title()}, I can't invite you to dinner.")
+print
+print(f"Sorry {removed_guest6.title()}, I can't invite you to dinner.")
+print(f"Dear {invite[0].title()}, you are still invited to dinner.")
+print(f"Dear {invite[1].title()}, you are still invited to dinner.")
+print(invite)
+del invite[1]
+del invite[0]
+print(invite)
+#3-8. Seeing the World
+places = ['vietnam', 'japan', 'korea', 'china', 'america']
+print(places)
+print(sorted(places))
+print(places)
+print(sorted(places, reverse=True))
+print(places)
+places.reverse()
+print(places)
+places.reverse()
+print(places)
+places.sort()
+print(places)
+places.sort(reverse=True)
+print(places)
+#3-9. Dinner Guests
+print(f"I have invited {len(invite)} guests to dinner.")
+#3-10. Every Function
+countries = ['vietnam', 'japan', 'korea', 'china', 'america', 'france', 'germany']
+print("Original list:")
+print(countries)
+print("\n Sorted list: ")
+print(sorted(countries))
+print("\n Original list again: ")
+print(countries)
+countries.reverse()
+print("\n Reversed list: ")
+print(countries)
+countries.reverse()
+print("\n Reversed to original list: ")
+print(countries)
+countries.sort()
+print("\n Sorted list: ")
+print(countries)
+countries.sort(reverse=True)
+print("\n Sorted list in reverse alphabetical order: ")
+print(countries)
