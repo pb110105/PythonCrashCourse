@@ -71,3 +71,53 @@ elif age >= 20 and age < 65:
     print("adult")
 else:
     print("elder")
+#5-7. Favorite Fruit
+favorite_fruits = ['apple', 'banana', 'mango']
+if 'banana' in favorite_fruits:
+    print("You really like banana!")
+#5-8. Hello Admin
+username = ['admin', 'bao', 'anh', 'hung', 'trang']
+for name in username:
+    if name == 'admin':
+        print("Hello admin, would you like to see a status report?")
+    else:
+        print(f"Hello {name}, thank you for logging in again.")
+#5-9. No Users
+username = []
+if username:
+    for name in username:
+        if name == 'admin':
+            print("Hello admin, would you like to see a status report?")
+        else:
+            print(f"Hello {name}, thank you for logging in again.")
+else:
+    print("We need to find some users!")
+#5-10. Checking Usernames
+current_users = ['bao', 'anh', 'hung', 'trang', 'linh']
+new_users = ['nam', 'hoa', 'bao', 'linh', 'tuan']
+for new_user in new_users:
+    if new_user.lower() in [user.lower() for user in current_users]:
+        print(f"{new_user} has been used, please enter a new username.")
+    else:
+        print(f"{new_user} is available.")
+#5-11. Ordinal Numbers
+numbers = list(range(1,10))
+for number in numbers:
+    if number == 1:
+        print(f"{number}st")
+    elif number == 2:
+        print(f"{number}nd")
+    elif number == 3:
+        print(f"{number}rd")
+    else:
+        print(f"{number}th")
+#5-12. Styling if statements
+if age > 2:
+    print("Child")
+#5-13. Your Ideas
+animals = ['dog', 'cat', 'rabbit', 'zebra', 'giraffe', 'elephant']
+for animal in animals:
+    if 'lion' in animal:
+        print(f"{animal} is the king of the jungle.")
+    else:
+        print(f"{animal} is a wonderful animal.")
