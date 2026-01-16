@@ -28,3 +28,6 @@ def show_completed_models(completed_models):
         print(completed_model)
 print_models(unprinted_designs, completed_models)
 show_completed_models(completed_models)
+#Printing a Function from Modifying a List
+print("------")
+print_models(unprinted_designs[:], completed_models)
