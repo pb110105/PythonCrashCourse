@@ -82,3 +82,54 @@ print(sent_messages)
 print("--")
 archive = send_messages(msg[:], sent_messages)
 print(sent_messages)
+#8-12. Sandwiches
+def make_sandwich(number_of_gredient):
+    number_of_gredient = int(number_of_gredient)
+    gredients =['potato', 'cheese', 'meet', 'soft', 'tomato', 'chicken']
+    sandwich = []
+    for i in range(number_of_gredient):
+        print(f"Adding {gredients[i].title()} for your sandwich")
+        sandwich.append(gredients[i])
+    print(f"Your sand wich have {sandwich}")
+make_sandwich(4)
+make_sandwich(3)
+make_sandwich(1)
+#8-13. User Profile
+def build_profile(first, last, **user_info):
+    """Build a dictionary containing everything we know about a user"""
+    user_info['first_name'] = first
+    user_info['last_name'] = last
+    return user_info
+user_profile = build_profile('Bao', 'Pham', location = 'Bien Hoa', field = 'Data Engineer', date = 2005)
+print(user_profile)
+#8-14. Cars
+def make_car(producer, model, **info):
+    info['name_producer'] = producer
+    info['name_model'] = model
+    return info
+car = make_car('subaru', 'outblack', color = 'red', height = 85.3, born = 2004)
+print(car)
+#8-15. Printing Models
+import printing_models
+unprinted_designs = ['phone case', 'robot pendant', 'dodecahedron']
+completed_models = []
+printing_models.print_models(unprinted_designs, completed_models )
+printing_models.show_completed_models(completed_models)
+#8-16. Imports
+import person
+musician = person.build_person('jimi', 'hendrix', age = 17)
+print(musician)
+from person import build_person
+musician = build_person('jimi', 'hendrix', age = 17)
+print(musician)
+from person import build_person as bp
+musiciiian = bp('jimi', 'hendrix', age = 17)
+print(musician)
+import person as p
+musician = p.build_person('jimi', 'hendrix', age = 17)
+print(musician)
+from person import *
+musician = build_person('jimi', 'hendrix', age = 17)
+print(musician)
+#8-17. Styling Funtions
+#Nothing to do in this file

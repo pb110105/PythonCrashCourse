@@ -19,3 +19,10 @@ def make_pizza(size, *toppings):
         print(f"- {topping}")
 make_pizza(16, 'pepperoni')
 make_pizza(12,'mushrooms', 'green peppers', 'extra cheese')
+#Storing your funtion in muodule
+#Importing  an Entire module
+def make_pizza(size, *toppings):
+    """Sumarize the pizza we are about to make"""
+    print(f"\n Makeing a {size}-inch pizza with the following toppings")
+    for topping in toppings:
+        print(f"- {topping}")
