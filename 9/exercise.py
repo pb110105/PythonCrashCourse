@@ -85,3 +85,43 @@ User2.greet_user()
 User3 = User("Anh", "Pham", 0)
 User3.describe_user()
 User3.greet_user()
+#9-6. Ice Cream Stand
+class IceCreamStand(restaurant):
+    def __init__(self, restaurant_name, cuisine_type):
+        super().__init__(restaurant_name, cuisine_type)
+        self.flavors = ['vani', 'choco', 'matcha']
+    def display_flavors(self):
+        print(f"Available flavors: {self.flavors}")
+ice_cream =  IceCreamStand("Each", "Ice Cream")
+ice_cream.describe_restaurant()
+ice_cream.display_flavors()
+#9-7 Admin
+class Admin(User):
+    def __init__(self, first_name, last_name, login_attempts):
+        super().__init__(first_name, last_name, login_attempts)
+        self.privileges = ['can add post', 'can delete', 'can ban user']
+    def show_privileges(self):
+        print(f"Admin privileges: {self.privileges}")
+admin_user = Admin("Admin", "User", 0)
+admin_user.describe_user()
+admin_user.show_privileges()
+#9-8. Privileges
+class Privileges:
+    def __init__(self, privileges = []):
+        self.privileges = privileges
+    def show_privileges(self):
+        print(f"Admin privileges: {self.privileges}")
+class Admin(User):
+    def __init__(self, first_name, last_name, login_attempts):
+        super().__init__(first_name, last_name, login_attempts)
+        self.privileges = Privileges(['can add post', 'can delete', 'can ban user'])
+admin_user = Admin("Admin", "User", 10)
+admin_user.describe_user()
+admin_user.privileges.show_privileges()
+#9-9. Battery Upgrade
+print("9-9. Battery Upgrade")
+import electric_car as ec
+my_tesla = ec.ElectricCar('tesla', 'model s', 2024)
+my_tesla.battery.describe_battery()
+my_tesla.battery.upgrade_battery()
+my_tesla.battery.describe_battery()
