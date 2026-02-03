@@ -25,6 +25,7 @@ class Car:
         """Add the given amount to the odometer reading"""
         self.odometer_reading += miles
 #Instance as attribute
+from car import Car
 class Battery:
     """A simple attempt to model a battery for an electric car."""
     def __init__ (self, battery_size=40):
@@ -68,3 +69,7 @@ my_leaf = ElectricCar('nissan', 'leaf', 2024)
 print(my_leaf.get_descriptive_name())
 my_leaf.battery.describe_battery()
 my_leaf.battery.get_range()
+#Importing a Module into a Module
+from car import Car
+
+
