@@ -1,6 +1,9 @@
-import sys
-print("1. Starting...", flush=True)
-name = input("Please enter your name: ")
-with open('test_debug.txt', 'w') as f:
-    f.write(f"Name: {name}\n")
-print("2. Done!", flush=True)
+#5-10. Guest Book
+from pathlib import Path
+pathfile10 = Path('10/guest_book.txt')
+while True:
+    name = input("Please enter your name (or 'quit' to exit): ")
+    if name.lower() == 'quit':
+        break
+    with pathfile10.open('a') as f:
+        f.write(name + '\n')
