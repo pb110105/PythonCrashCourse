@@ -125,3 +125,44 @@ my_tesla = ec.ElectricCar('tesla', 'model s', 2024)
 my_tesla.battery.describe_battery()
 my_tesla.battery.upgrade_battery()
 my_tesla.battery.describe_battery()
+#9-10. Imported Restaurant
+my_restaurant = restaurant("Dookie", "Buffet")
+my_restaurant.describe_restaurant()
+my_restaurant.open_restaurant()
+#9-11. Imported Admin
+admin_user = Admin("admin", "user", 0)
+admin_user.describe_user()
+admin_user.privileges.show_privileges()
+#9-12. Multiple Modules
+from dog import Dog
+from car import Car
+action_dog = Dog("barry", 3)
+action_dog.sit()
+action_dog.roll()
+#9-13. Dice
+from random import randint
+class Die: 
+    def __init__(self, sides=6):
+        self.sides = sides
+    def roll_die(self):
+        print(f"Random number: {randint(1, self.sides)}")
+six_sided_die = Die()
+six_sided_die.roll_die()
+ten_sided_die = Die(10)
+ten_sided_die.roll_die()
+twenty_sided_die = Die(20)
+twenty_sided_die.roll_die()
+#9-14. Lottery
+lottery = [1,2,3,4,5,6,7,8,9,10,'a','b','c','d','e']
+from random import choice
+print(f"Lottery result: {choice(lottery)}{choice(lottery)}{choice(lottery)}{choice(lottery)}")
+#9-15. Lottery Analysis
+my_ticket = [1,2,3,4,5]
+win_lottery = [choice(lottery) for _ in range(12)]
+matches = 0
+for number in my_ticket:
+    if number in win_lottery:
+        matches += 1
+print(f"Number of matches: {matches}")
+#9-16. Python Module of the Week
+#Nothing to do for this exercise, but you can visit the Python Module of the Week website at https://pymotw.com/ to explore the standard library and find modules that interest you.
