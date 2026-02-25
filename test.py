@@ -1,9 +1,6 @@
-#5-10. Guest Book
 from pathlib import Path
-pathfile10 = Path('10/guest_book.txt')
-while True:
-    name = input("Please enter your name (or 'quit' to exit): ")
-    if name.lower() == 'quit':
-        break
-    with pathfile10.open('a') as f:
-        f.write(name + '\n')
+path_common_words = Path('10/siddhartha.txt')
+common_words = path_common_words.read_text(encoding='utf-8')
+print(common_words.count('the'))
+print(common_words.lower().count('the'))
+

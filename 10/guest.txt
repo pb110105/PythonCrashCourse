@@ -1,1 +1,1 @@
-bao
+python -u "c:\Users\DELL\Downloads\python_work\test.py"

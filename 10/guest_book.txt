@@ -1,3 +1,28 @@
 ngan dep gai
 bao
 emo
+bao
+python -u "c:\Users\DELL\Downloads\python_work\test.py"
+123
+123
+132
+123
+123
+python -u "c:\Users\DELL\Downloads\python_work\test.py"
+bao
+qwd
+21dff
+123
+123
+123
+123
+12
+312
+31
+23
+123
+123
+12
+312
+3
+123
