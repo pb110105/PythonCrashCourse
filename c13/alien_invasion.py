@@ -1,8 +1,10 @@
+from time import sleep
 from settings import Settings
 from ship import Ship
 from bullet import Bullet
 from alien import Alien
 import sys
+from game_stats import GameStats
 import pygame
 class AlienInvasion:
     def __init__(self):
@@ -14,10 +16,12 @@ class AlienInvasion:
         self.settings.screen_width = self.screen.get_rect().width
         self.settings.screen_height = self.screen.get_rect().height
         pygame.display.set_caption("Alien Invasion")
+        self.stats = GameStats(self)
         self.ship = Ship(self)
         self.bullets = pygame.sprite.Group()
         self.aliens = pygame.sprite.Group()
         self._create_fleet()
+        self.game_active = True
     def _create_fleet(self):
         alien = Alien(self)
         alien_width, alien_height = alien.rect.size
@@ -38,15 +42,32 @@ class AlienInvasion:
         """Start the main loop for the game."""
         while True:
             self.check_events()
-            self.ship.update()
-            self._update_bullets()
-            self._update_aliens()
-            self.bullets.update()
+            if self.game_active:
+                self.ship.update()
+                self._update_bullets()
+                self._update_aliens()
+                self.bullets.update()
             self._update_screen()
             self.clock.tick(60)
     def _update_aliens(self):
         self._check_fleet_edges()
         self.aliens.update()
+        if pygame.sprite.spritecollideany(self.ship, self.aliens):
+            self._ship_hit()
+        self._check_aliens_bottom()
+    def _ship_hit(self):
+        if self.stats.ship_left > 0:
+            self.stats.ship_left -= 1
+            self.bullets.empty()
+            self.aliens.empty()
+            self._create_fleet()
+            self.ship.center_ship()
+            sleep(0.5)
+        else:
+            self.game_active = False
+    def center_ship(self):
+        self.rect.midbottom = self.screen_rect.midbottom
+        self.x = float(self.rect.x)
     def check_events(self):
         """Respond to keypresses and mouse events."""
         for event in pygame.event.get():
@@ -103,6 +124,11 @@ class AlienInvasion:
         if not self.aliens:
             self.bullets.empty()
             self._create_fleet()
+    def _check_aliens_bottom(self):
+        for alien in self.aliens.sprites():
+            if alien.rect.bottom >= self.settings.screen_height:
+                self._ship_hit()
+                break
 if __name__ == '__main__':
     ai = AlienInvasion()
     ai.run_game()

@@ -4,6 +4,7 @@ class Settings:
         self.screen_height = 600
         self.bg_color = (230, 230, 230)
         self.ship_speed = 3.5
+        self.ship_limit = 3
 
         self.bullet_speed = 5.0
         self.bullet_width = 3
