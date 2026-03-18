@@ -62,6 +62,7 @@ class AlienInvasion:
     def _ship_hit(self):
         if self.stats.ship_left > 0:
             self.stats.ship_left -= 1
+            self.sb.prep_ships()
             self.bullets.empty()
             self.aliens.empty()
             self._create_fleet()
@@ -92,6 +93,8 @@ class AlienInvasion:
                 self.settings.initialize_dynamic_settings()
                 self.stats.reset_stats()
                 self.sb.prep_score()
+                self.sb.prep_level()
+                self.sb.prep_ships()
                 self.game_active = True
                 self.bullets.empty()
                 self.aliens.empty()
@@ -149,12 +152,15 @@ class AlienInvasion:
             for aliens in collision.values():
                 self.stats.score += self.settings.alien_points * len(aliens)
             self.sb.prep_score()
+            self.sb.check_high_score()
         if not self.aliens:
             self.bullets.empty()
             self._create_fleet()
             self.settings.increase_speed()
+            self.stats.level += 1
+            self.sb.prep_level()
     def _check_aliens_bottom(self):
-        for alien in self.aliens.sprites():
+        for alien in self.aliens.sprites(): 
             if alien.rect.bottom >= self.settings.screen_height:
                 self._ship_hit()
                 break
