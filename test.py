@@ -1,23 +1,14 @@
-import requests
-from bs4 import BeautifulSoup
-import pandas as pd
-url = "http://quotes.toscrape.com/"
-response = requests.get(url)
-if response.status_code == 200:
-    print("Truy cập thành công! Đang tiến hành bóc tách dữ liệu...\n")
-    soup = BeautifulSoup(response.text, 'html.parser')
-    quotes_list = []
-    blocks = soup.find_all('div', class_='quote')
-    
-    for block in blocks:
-        quote_text = block.find('span', class_='text').text
-        author = block.find('small', class_='author').text
-        quotes_list.append({
-            'Tác giả': author,
-            'Câu châm ngôn': quote_text
-        })
-    df_quotes = pd.DataFrame(quotes_list)
-    
-    print(df_quotes.head())
-else:
-    print(f"Lỗi truy cập! Mã lỗi: {response.status_code}")
+#15-2 Colored Cubes
+import matplotlib.pyplot as plt
+x_values = range(1, 5001)
+y_values = [x**3 for x in x_values]
+plt.style.use('seaborn-v0_8')
+fig,ax = plt.subplots()
+ax.scatter(x_values, y_values, c = y_values, cmap = plt.cm.Blues)
+ax.set_title("Cubic Numbers", fontsize = 14)
+ax.set_xlabel("Value", fontsize = 14)
+ax.set_ylabel("Cube of Value", fontsize = 14)
+ax.tick_params(labelsize = 14)
+ax.axis([0,5100,0, 125_000_000_000])
+ax.ticklabel_format(style = 'plain')
+plt.show()
