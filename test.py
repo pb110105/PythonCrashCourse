@@ -1,14 +1,20 @@
-#15-2 Colored Cubes
+#15-10. Practicing with Both Libraries
 import matplotlib.pyplot as plt
-x_values = range(1, 5001)
-y_values = [x**3 for x in x_values]
-plt.style.use('seaborn-v0_8')
-fig,ax = plt.subplots()
-ax.scatter(x_values, y_values, c = y_values, cmap = plt.cm.Blues)
-ax.set_title("Cubic Numbers", fontsize = 14)
-ax.set_xlabel("Value", fontsize = 14)
-ax.set_ylabel("Cube of Value", fontsize = 14)
-ax.tick_params(labelsize = 14)
-ax.axis([0,5100,0, 125_000_000_000])
-ax.ticklabel_format(style = 'plain')
-plt.show()
+from random_walk import RandomWalk
+while True:
+    rw = RandomWalk(5_000)
+    rw.fill_walk()
+    plt.style.use('classic')
+    fig, ax = plt.subplots(figsize = (10, 6), dpi = 128)
+    point_numbers = range(rw.num_points)
+    ax.plot(rw.x_values, rw.y_values, c = 'blue', linewidth = 1)
+    ax.set_aspect('equal')
+    ax.scatter(0, 0, c='green', edgecolors='none', s=100)
+    ax.scatter(rw.x_values[-1], rw.y_values[-1], c='red', edgecolors='none', s=100)
+    ax.get_xaxis().set_visible(False)
+    ax.get_yaxis().set_visible(False)
+    plt.show()
+    keep_running = input("Make another walk? (y/n): ")
+    if keep_running == 'n':
+        break
+    
